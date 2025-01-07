@@ -1,0 +1,353 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Download Movies</title>   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>  
+<style>
+    body {  
+    font-family: Arial, sans-serif;  
+    background-color: #141414; /* Netflix dark background */
+    background-image: url(pics/wp5493855-4k-hd-anime-pc-wallpapers.jpg);
+    background-repeat: no-repeat;  
+    background-size:cover;
+    margin: 0;  
+    padding: 0;  
+}  
+.avatar{
+   width: 90px;
+   height: 90px;
+    border-radius: 50%;
+    float: left;
+}
+
+.topnav {
+    overflow: auto;
+    background-color:#14141400;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+  }
+  .topnav a {
+    float: left;
+    color: red;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    padding-right: 20px;
+    font-size: 20px;
+  }
+  
+  .topnav a:hover {
+    background-color: #141414;
+    color: rgb(255, 255, 255);
+    
+  }
+  .topnav .search-container {
+  float: right;
+}
+
+.topnav input[type=text] {
+  padding: 6px;
+  width: 30%;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+  font-size: 23px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0);
+  color: rgb(255, 255, 255);
+  transition: width 0.4s ease-in-out;
+  position: relative;
+}
+.topnav input[type=text]:focus{
+    width: 80%;
+
+}
+.topnav .search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  color: rgb(255, 255, 255);
+  font-size: 23px;
+  border: none;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0);
+
+}
+
+/*.topnav .search-container button:hover {
+  background: #ccc;
+}*/
+  /* Create a right-aligned (split) link inside the navigation bar */
+  .topnav a.split {
+    float: right;
+    color: white;
+  }
+  .topnav a.pr{
+    float: right;
+    color: white;
+    background-color: red;
+  }
+  .topnav a.pr:hover{
+    color: black;
+  }
+header {  
+    background-color: #0000006b;  
+    padding: 20px;  
+    text-align: center;  
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 100;
+    height: 50px;
+    padding-top: 80px;
+}  
+
+h1 {  
+    color: #e50914; /* Netflix red */  
+}  
+
+.container {  
+    padding: 20px;  
+    max-width: 1200px;  
+    margin: auto;  
+}  
+
+.movie-grid {  
+    display: grid;  
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));  
+    gap: 20px;  
+}  
+
+.movie-item {  
+    position: relative;  
+    overflow: hidden;  
+    border-radius: 8px;  
+}  
+
+.movie-item img {  
+    width: 100%;  
+    border-radius: 8px;  
+    transition: transform 0.3s; /* Smooth scaling on hover */  
+}
+
+.movie-item:hover img {  
+    transform: scale(1.05); /* Scale up image on hover */  
+}  
+.movie-name {  
+    position: absolute;  
+    bottom: 0;  
+    left: 0;  
+    right: 0;  
+    padding: 10px;  
+    background: rgba(0, 0, 0, 0.7); /* Dark background for text */  
+    color: #ffffff; /* White text */  
+    display: block; /* show info by default */  
+}  
+
+.movie-item:hover .movie-name {  
+    display: none; /*hide info on hover*/
+}  
+.movie-info {  
+    position: absolute;  
+    bottom: 0;  
+    left: 0;  
+    right: 0;  
+    padding: 10px;  
+    background: rgba(0, 0, 0, 0.7); /* Dark background for text */  
+    color: #ffffff; /* White text */  
+    display: none; /* Hide info by default */  
+}  
+
+.movie-item:hover .movie-info {  
+    display: block; /* Show info on hover */  
+}  
+
+a {  
+    color: #e50914; /* Red color for download links */  
+    text-decoration: none;  
+    font-weight: bold;  
+    display: block;  
+    margin-top: 10px;  
+}  
+
+a:hover {  
+    text-decoration: underline; /* Underline on hover */  
+}
+
+</style>
+<body>  
+    <div class="topnav">
+        <img src="pics/logo.png" alt="Vs Movies" class="avatar">
+        <a class="active" href="Home.html"><i class="fa fa-fw fa-home"></i>Home</a>
+        <a href="#news">About Us</a>
+        <a href="contact.html"><i class="fa fa-fw fa-envelope"></i>Contact</a>
+        <a href="Anime.html"><i class="fa fa-fw fa-download"></i>Anime</a>
+        <a href="Sign In.html" class="split"><i class="fa fa-fw fa-user"></i>Sign Out</a>
+        <a href="primuim.html" class="pr" target="_blank"><i class="fa fa-diamond" aria-hidden="true" ></i>Primium</a>
+        <div class="search-container">
+            <form action="/action_page.php">
+                <button type="submit"><i class="fa fa-search"></i></button>
+                <input type="text" placeholder="Search..." name="search">
+            </form>
+        </div>
+        
+    </div>
+    <header>  
+        <h1>Trending Anime</h1>  
+    </header>  
+    <div class="container">  
+        <div class="movie-grid">  
+            <div class="movie-item">  
+                <img src="pics/ae874b17b51ec5f2e1d4f38a994895fa9be19e54922240e942392bb773cc891e.jpg" alt="Movie Title 1">  
+                <div class="movie-name">  
+                    <h2>Seven Deadly Sins</h2>  
+                </div> 
+                <div class="movie-info">  
+                    <h2>Seven Deadly Sins</h2>  
+                    <p>Description of Movie 1 goes here.</p>  
+                    <a href="path_to_movie_file_1.mp4" download><i class="fa fa-fw fa-download"></i>Download</a>  
+                    <p>Rating &#9733&#9733&#9733&#9734&#9734</p>
+                </div>  
+            </div>  
+            <div class="movie-item">  
+                <img src="pics/pic3.png" alt="Movie Title 2"> 
+                <div class="movie-name">  
+                    <h2>Jujutsu Kiesen</h2>  
+                </div> 
+                <div class="movie-info">  
+                    <h2>Jujutsu Kiesen</h2>  
+                    <p>Description of Movie 2 goes here.</p>  
+                    <a href="path_to_movie_file_2.mp4" download>Download</a> 
+                    <p>Rating &#9733&#9733&#9733&#9734&#9734</p> 
+                </div>  
+            </div>  
+            <div class="movie-item">  
+                <img src="pics/download (1).jpg" alt="Movie Title 3"> 
+                <div class="movie-name">  
+                    <h2>Blue Lock</h2>  
+                </div> 
+                <div class="movie-info">  
+                    <h2>Blue Lock</h2>  
+                    <p>Description of Movie 3 goes here.</p>  
+                    <a href="path_to_movie_file_3.mp4" download>Download</a> 
+                    <p>Rating &#9733&#9734&#9734&#9734&#9734</p> 
+                </div>  
+            </div>  
+            <div class="movie-item">  
+                <img src="pics/download (2).jpg" alt="Movie Title 3">
+                <div class="movie-name">  
+                    <h2>OverLord</h2>  
+                </div>  
+                <div class="movie-info">  
+                    <h2>OverLord</h2>  
+                    <p>Description of Movie 3 goes here.</p>  
+                    <a href="path_to_movie_file_3.mp4" download>Download</a>
+                    <p>Rating &#9733&#9733&#9734&#9734&#9734</p>  
+                </div>  
+            </div> 
+            <div class="movie-item">  
+                <img src="pics/download (3).jpg" alt="Movie Title 3"> 
+                <div class="movie-name">  
+                    <h2>Naruto</h2>  
+                </div> 
+                <div class="movie-info">  
+                    <h2>Naruto</h2>  
+                    <p>Description of Movie 3 goes here.</p>  
+                    <a href="path_to_movie_file_3.mp4" download>Download</a>
+                    <p>Rating &#9733&#9733&#9733&#9733&#9734</p>  
+                </div>  
+            </div>   
+            <div class="movie-item">  
+                <img src="pics/download (4).jpg" alt="Movie Title 3">
+                <div class="movie-name">  
+                    <h2>Chainsaw Man</h2>  
+                </div>  
+                <div class="movie-info">  
+                    <h2>Chainsaw Man</h2>  
+                    <p>Description of Movie 3 goes here.</p>  
+                    <a href="path_to_movie_file_3.mp4" download>Download</a> 
+                    <p>Rating &#9733&#9733&#9733&#9733&#9733</p> 
+                </div>  
+            </div> 
+            <div class="movie-item">  
+                <img src="pics/download (5).jpg" alt="Movie Title 3"> 
+                <div class="movie-name">  
+                    <h2>That Time I Was Recarnated As A Slime</h2>  
+                </div> 
+                <div class="movie-info">  
+                    <h2>That Time I Was Recarnated As A Slime</h2>  
+                    <p>Description of Movie 3 goes here.</p>  
+                    <a href="path_to_movie_file_3.mp4" download>Download</a>
+                    <p>Rating &#9733&#9733&#9733&#9734&#9734</p> 
+                </div>  
+            </div>  
+            <div class="movie-item">  
+                <img src="pics/download (6).jpg" alt="Movie Title 3"> 
+                <div class="movie-name">  
+                    <h2>Dr Stone</h2>  
+                </div> 
+                <div class="movie-info">  
+                    <h2>Dr Stone</h2>  
+                    <p>Description of Movie 3 goes here.</p>  
+                    <a href="path_to_movie_file_3.mp4" download>Download</a> 
+                    <p>Rating &#9733&#9733&#9733&#9734&#9734</p> 
+                </div>  
+            </div> 
+            <div class="movie-item">  
+                <img src="pics/download (7).jpg" alt="Movie Title 3"> 
+                <div class="movie-name">  
+                    <h2>Kuroko Basketball</h2>  
+                </div> 
+                <div class="movie-info">  
+                    <h2>Kuroko Basketball</h2>  
+                    <p>Description of Movie 3 goes here.</p>  
+                    <a href="path_to_movie_file_3.mp4" download>Download</a>
+                    <p>Rating &#9733&#9733&#9733&#9734&#9734</p>  
+                </div>  
+            </div>  
+            <div class="movie-item">  
+                <img src="pics/images (1).jpg" alt="Movie Title 3">
+                <div class="movie-name">  
+                    <h2>One Piece</h2>  
+                </div>  
+                <div class="movie-info">  
+                    <h2>One Piece</h2>  
+                    <p>Description of Movie 3 goes here.</p>  
+                    <a href="path_to_movie_file_3.mp4" download>Download</a>
+                    <p>Rating &#9733&#9733&#9733&#9734&#9734</p>  
+                </div>  
+            </div> 
+            <div class="movie-item">  
+                <img src="pics/images (2).jpg" alt="Movie Title 3">  
+                <div class="movie-name">  
+                    <h2>Jujutsu Kiesen Movie</h2>  
+                </div>
+                <div class="movie-info">  
+                    <h2>Jujutsu Kiesen Movie</h2>  
+                    <p>Description of Movie 3 goes here.</p>  
+                    <a href="path_to_movie_file_3.mp4" download>Download</a> 
+                    <p>Rating &#9733&#9733&#9733&#9733&#9733</p> 
+                </div>  
+            </div>
+            <div class="movie-item">  
+                <img src="pics/images (3).jpg" alt="Movie Title 3"> 
+                <div class="movie-name">  
+                    <h2>Tokyo Goul</h2>  
+                </div> 
+                <div class="movie-info">  
+                    <h2>Tokyo Goul</h2>  
+                    <p>Description of Movie 3 goes here.</p>  
+                    <a href="path_to_movie_file_3.mp4" download>Download</a> 
+                    <p>Rating &#9733&#9733&#9734&#9734&#9734</p> 
+                </div>  
+            </div>       
+        </div>  
+    </div>  
+</body>  
+</html>

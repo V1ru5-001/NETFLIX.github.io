@@ -1,0 +1,87 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Download Movies</title>  
+    <link rel="stylesheet" href="styles.css">  
+</head>  
+<style>
+    body {  
+    font-family: Arial, sans-serif;  
+    background-color: #181818; /* Dark background */  
+    color: #ffffff; /* White text */  
+    margin: 0;  
+    padding: 20px;  
+}  
+
+.container {  
+    max-width: 800px;  
+    margin: auto;  
+}  
+
+h1 {  
+    text-align: center;  
+}  
+
+.movie-list {  
+    margin-top: 20px;  
+}  
+
+.movie-item {  
+    background-color: #282828; /* Slightly lighter background for items */  
+    padding: 15px;  
+    margin: 10px 0;  
+    border-radius: 5px;  
+    display: flex;  
+    align-items: center; /* Center align images and text */  
+}  
+
+.movie-image {  
+    width: 100px; /* Set an appropriate width for the movie images */  
+    height: auto; /* Maintain aspect ratio */  
+    margin-right: 15px; /* Space between image and text */  
+    border-radius: 5px; /* Border radius for image */  
+}  
+
+p {  
+    margin: 10px 0;  
+}  
+
+a {  
+    color: #e50914; /* Red color for links */  
+    text-decoration: none;  
+    font-weight: bold;  
+}  
+
+a:hover {  
+    text-decoration: underline; /* Underline on hover */  
+}
+</style>
+<body>  
+    <div class="container">  
+        <h1>Download Movies</h1>  
+        <div class="movie-list">  
+            <div class="movie-item">  
+                <img src="path_to_image_1.jpg" alt="Movie Title 1" class="movie-image">  
+                <h2>Movie Title 1</h2>  
+                <p>Description of Movie 1 goes here. A brief synopsis or details can be added.</p>  
+                <a href="path_to_movie_file_1.mp4" download>Download Movie 1</a>  
+            </div>  
+            <div class="movie-item">  
+                <img src="path_to_image_2.jpg" alt="Movie Title 2" class="movie-image">  
+                <h2>Movie Title 2</h2>  
+                <p>Description of Movie 2 goes here. A brief synopsis or details can be added.</p>  
+                <a href="path_to_movie_file_2.mp4" download>Download Movie 2</a>  
+            </div>  
+            <div class="movie-item">  
+                <img src="path_to_image_3.jpg" alt="Movie Title 3" class="movie-image">  
+                <h2>Movie Title 3</h2>  
+                <p>Description of Movie 3 goes here. A brief synopsis or details can be added.</p>  
+                <a href="path_to_movie_file_3.mp4" download>Download Movie 3</a>  
+            </div>  
+            <!-- Add more movies as needed -->  
+        </div>  
+    </div>  
+</body>  
+</html>
